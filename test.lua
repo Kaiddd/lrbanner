@@ -14,7 +14,7 @@ for i=1,20 do
     end
 end
 
-task.wait(.5)
+task.wait()
 
 local function filter(tbl, ret)
     if (type(tbl) == 'table') then
