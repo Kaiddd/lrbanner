@@ -16,6 +16,18 @@ end
 
 task.wait(.5)
 
+local function filter(tbl, ret)
+    if (type(tbl) == 'table') then
+        local new = {}
+        for i, v in next, tbl do
+            if (ret(i, v)) then
+                new[#new + 1] = v
+            end
+        end
+        return new
+    end
+end
+
 local sInfo = https.JSONDecode(https, game.HttpGetAsync(game, "https://games.roblox.com/v1/games/"..tostring(game.PlaceId).."/servers/Public?sortOrder=Asc&limit=100"))
 local servers = sInfo.data
 
