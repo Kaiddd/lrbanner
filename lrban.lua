@@ -35,6 +35,6 @@ if #servers ~= 0 and #servers ~= 1 then
     end)
     server = servers[math.random(1, #servers)]
     local qot = syn.queue_on_teleport or queue_on_teleport
-    qot('loadstring(game:HttpGet("https://raw.githubusercontent.com/Kaiddd/lrbanner/main/test.lua", false))()')
+    qot('loadstring(game:HttpGet("https://raw.githubusercontent.com/Kaiddd/lrbanner/main/lrban.lua", false))()')
     tps.TeleportToPlaceInstance(tps,game.PlaceId,server.id)
 end
