@@ -33,8 +33,12 @@ if #servers ~= 0 and #servers ~= 1 then
     servers = filter(servers,function(i,v)
         return v.playing ~= v.maxPlayers and v.id ~= game.JobId
     end)
-    server = servers[math.random(1, #servers)]
     local qot = syn.queue_on_teleport or queue_on_teleport
     qot('loadstring(game:HttpGet("https://raw.githubusercontent.com/Kaiddd/lrbanner/main/lrban.lua", false))()')
+    server = servers[math.random(1, #servers)]
     tps.TeleportToPlaceInstance(tps,game.PlaceId,server.id)
+    while task.wait(2) do
+        server = servers[math.random(1, #servers)]
+        tps.TeleportToPlaceInstance(tps,game.PlaceId,server.id)
+    end
 end
