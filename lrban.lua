@@ -5,7 +5,7 @@ local rpls = game:GetService("ReplicatedStorage")
 local https = game:GetService("HttpService")
 local tps = game:GetService("TeleportService")
 
-for i=1,20 do
+for i=1,40 do
     for i,v in pairs(plrs:GetChildren()) do
         if v ~= plrs.LocalPlayer and tostring(v) ~= "took_mytime" then
             task.wait()
